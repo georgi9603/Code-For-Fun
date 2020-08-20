@@ -14,9 +14,11 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
 import { db } from './firebase';
+import { useStateValue } from './StateProvider';
 
 export default function Sidebar() {
     const [channels, setChannels] = useState([]);
+    const [{ user }] = useStateValue();
 
     useEffect(() => {
         db.collection('rooms').onSnapshot(snapshot => (
@@ -34,8 +36,8 @@ export default function Sidebar() {
                     <h2>Slack</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                    Georgi Karabozhilov
-                </h3>
+                        {user?.displayName}
+                    </h3>
                 </div>
                 <CreateIcon />
             </div>
