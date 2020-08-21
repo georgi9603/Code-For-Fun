@@ -12,7 +12,6 @@ function Login() {
         auth
             .signInWithPopup(provider)
             .then(result => {
-                console.log(result)
                 dispatch({
                     type: actionTypes.SET_USER,
                     user: result.user
@@ -25,7 +24,7 @@ function Login() {
         <div className="login">
             <div className="login__container">
                 <img src="https://cdn.brandfolder.io/5H442O3W/as/pl546j-7le8zk-5guop3/Slack_RGB.png" alt=""></img>
-                <h1>Sign in to Slack_Clone made by by G.K.</h1>
+                <h1>Sign in to Slack-Like made by by G.K.</h1>
                 <Button onClick={SignIn}>Sign In with Google</Button>
                 <p></p>
             </div>

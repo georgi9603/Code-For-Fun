@@ -47,8 +47,6 @@ function Chat() {
                 </div>
             </div>
             <div className="chat__messages">
-                {console.log(roomDetails)}
-                {console.log(roomMessages)}
                 {roomMessages.map(({ message, timestamp, user, userimage, }) =>
                     <Message
                         key={timestamp}
@@ -59,11 +57,12 @@ function Chat() {
                     />
                 )}
             </div>
-
-            <ChatInput
-                channelName={roomDetails?.name}
-                channelId={roomId}
-            />
+            <div className="chat__input">
+                <ChatInput
+                    channelName={roomDetails?.name}
+                    channelId={roomId}
+                />
+            </div>
         </div>
     )
 }

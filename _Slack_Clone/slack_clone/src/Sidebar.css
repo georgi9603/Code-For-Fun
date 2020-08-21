@@ -4,6 +4,17 @@
   color: white;
   max-width: 260px;
   flex: 0.3;
+
+  overflow: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .sidebar > hr {
