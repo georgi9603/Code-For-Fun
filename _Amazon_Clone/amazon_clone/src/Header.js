@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchIcon from '@material-ui/icons/Search';
+import BasketIcon from '@material-ui/icons/ShoppingBasket'
 import './Header.css';
 import { Link } from 'react-router-dom';
 
@@ -55,7 +56,14 @@ function Header() {
                     </Link>
                 </div>
                 <div className="header__basket">
-
+                    <Link to="/Checkout" className="header__link">
+                        <div className="header__optionBasket">
+                            <BasketIcon />
+                            <span className="header__optionLineTwo header__basketCount">
+                                0
+                            </span>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </nav>
