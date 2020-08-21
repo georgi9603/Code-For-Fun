@@ -15,7 +15,7 @@ function App() {
             <h1>Login page</h1>
           </Route>
           <Route path="/">
-            <h1>HOME PAGE!!!</h1>
+            <Header />
           </Route>
         </Switch>
       </div>
