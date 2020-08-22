@@ -15,9 +15,9 @@ function Home() {
                 <Product
                     key={11}
                     id={1}
-                    title="Iphone 10X"
+                    title="Smartphone"
                     price={999.99}
-                    imgURL="https://drop.ndtv.com/TECH/product_database/images/913201720152AM_635_iphone_x.jpeg"
+                    imgURL="https://images.unsplash.com/photo-1578653883821-89a75dcbf391?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"
                     rating={5}
                 />
                 <Product
@@ -25,7 +25,7 @@ function Home() {
                     id={2}
                     title="Multy mixer"
                     price={259.99}
-                    imgURL="https://media.ao.com/en-GB/Productimages/Images/rvLarge/kmx754rd_rd_kenwood_mixer_01a_l.jpg"
+                    imgURL="https://images.unsplash.com/photo-1578643463396-0997cb5328c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"
                     rating={3}
                 />
             </div>
