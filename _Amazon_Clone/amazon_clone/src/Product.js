@@ -4,7 +4,7 @@ import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer';
 
 function Product({ id, title, price, imgURL, rating }) {
-    const [{ shoppingCart }, dispatch] = useStateValue();
+    const [{ }, dispatch] = useStateValue();
 
     const addToShoppingCart = () => {
         dispatch({
@@ -23,7 +23,10 @@ function Product({ id, title, price, imgURL, rating }) {
         <div className="product">
             <div className="product__info">
                 <p className="product__title">{title}</p>
-                <p className="product__price">${price}</p>
+                <p className="product__price">
+                    <small>$</small>
+                    <strong>{price}</strong>
+                </p>
                 <div className="product__rating">
                     {
                         Array(rating)

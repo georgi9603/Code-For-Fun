@@ -21,11 +21,6 @@
   font-weight: 800;
 }
 
-.product__price {
-  font-weight: 500;
-  margin-top: 5px;
-}
-
 .product__rating {
   font-size: xx-large;
   color: orange;
