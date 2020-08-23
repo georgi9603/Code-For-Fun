@@ -32,6 +32,9 @@ export const actionTypes = {
     REMOVE_FROM_CART: "REMOVE_FROM_CART"
 };
 
+export const getBasketTotal = shoppingCart =>
+    shoppingCart?.reduce((amount, product) => product.price + amount, 0);
+
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
@@ -40,8 +43,7 @@ const reducer = (state, action) => {
                 shoppingCart: [...state.shoppingCart, action.product]
             }
         case actionTypes.REMOVE_FROM_CART:
-            let newShoppingCart = state.shoppingCart.filter(product => product.id !== action.id)
-
+            const newShoppingCart = state.shoppingCart.filter(product => product.id !== action.id)
             return {
                 ...state,
                 shoppingCart: newShoppingCart
