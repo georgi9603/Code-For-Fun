@@ -2,12 +2,26 @@ import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from "./StateProvider";
+import { auth } from './firebase';
+import { actionTypes } from './reducer';
 
 
 function Header() {
-    const [{ shoppingCart }] = useStateValue();
+    const history = useHistory();
+    const [{ shoppingCart, user }, dispatch] = useStateValue();
+
+    const logout = () => {
+        if (user) {
+            dispatch({
+                type: actionTypes.CLEAR_CART,
+                shoppingCart: []
+            });
+            auth.signOut();
+            history.push("/login")
+        }
+    }
 
     return (
         <nav className="header">
@@ -25,13 +39,13 @@ function Header() {
                 <SearchIcon className="header__searchIcon" />
             </div>
             <div className="header__right">
-                <Link to="/Login" className="header__link">
-                    <div className="header__option">
+                <Link to={!user && "/login"} className="header__link">
+                    <div onClick={logout} className="header__option">
                         <span className="header__optionLineOne">
-                            Hello Georgi
+                            Hello {user?.email}
                         </span>
                         <span className="header__optionLineTwo">
-                            Sign In
+                            {user ? 'Sign Out' : 'Sign In'}
                         </span>
                     </div>
                 </Link>
