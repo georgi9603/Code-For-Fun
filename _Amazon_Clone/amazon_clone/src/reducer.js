@@ -8,11 +8,11 @@ export const actionTypes = {
 };
 
 const reducer = (state, action) => {
-
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
             return {
-
+                ...state,
+                shoppingCart: [...state.shoppingCart, action.product]
             }
         case actionTypes.REMOVE_TO_CART:
             return {
