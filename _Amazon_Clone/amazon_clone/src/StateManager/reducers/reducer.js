@@ -1,17 +1,4 @@
-export const initialState = {
-    shoppingCart: [],
-    user: null
-};
-
-export const actionTypes = {
-    SET_USER: "SET_USER",
-    ADD_TO_CART: "ADD_TO_CART",
-    REMOVE_FROM_CART: "REMOVE_FROM_CART",
-    CLEAR_CART: "CLEAR_CART"
-};
-
-export const getBasketTotal = shoppingCart =>
-    shoppingCart?.reduce((amount, product) => product.price + amount, 0);
+import { actionTypes } from '../actions/actionTypes';
 
 const reducer = (state, action) => {
     switch (action.type) {

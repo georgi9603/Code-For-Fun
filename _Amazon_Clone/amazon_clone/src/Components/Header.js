@@ -1,12 +1,11 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
-import './Header.css';
 import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from "./StateProvider";
-import { auth } from './firebase';
-import { actionTypes } from './reducer';
-
+import { auth } from '../firebase';
+import { actionTypes } from '../StateManager/actions/actionTypes';
+import './Header.css';
 
 function Header() {
     const history = useHistory();

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Product.css';
 import { useStateValue } from './StateProvider';
-import { actionTypes } from './reducer';
+import { actionTypes } from '../StateManager/actions/actionTypes';
+import './Product.css';
 
 function Product({ id, title, price, imgURL, rating }) {
     const [{ }, dispatch] = useStateValue();

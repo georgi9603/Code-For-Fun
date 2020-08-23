@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
-import './App.css';
-import Header from './Header';
-import Home from './Home';
-import Checkout from './Checkout';
-import Login from './Login';
+import Header from './Components/Header';
+import Home from './Pages/Home';
+import Checkout from './Pages/Checkout';
+import Login from './Pages/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from './Components/StateProvider';
 import { auth } from './firebase';
-import { actionTypes } from './reducer';
+import { actionTypes } from './StateManager/actions/actionTypes';
+import './App.css';
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(authUser => {
-      if (authUser) {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
         dispatch({
           type: actionTypes.SET_USER,
-          user: authUser
+          user
         });
       } else {
         dispatch({
@@ -31,8 +31,6 @@ function App() {
       unsubscribe();
     }
   }, []);
-
-  console.log("User is =>", user)
 
   return (
     <Router>
