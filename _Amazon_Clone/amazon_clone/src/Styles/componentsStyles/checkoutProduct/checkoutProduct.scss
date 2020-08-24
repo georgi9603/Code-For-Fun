@@ -1,3 +1,5 @@
+@import "../../common/primaryButton.scss";
+
 .checkout__title {
   margin-left: 20px;
 }
@@ -34,16 +36,5 @@
 }
 
 .checkoutProduct__info > button {
-  background-color: orange;
-  border-color: #a88734 #9c7e31 #846a29;
-  border: 1px solid;
-  border-radius: 5px;
-  margin-top: 45%;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
-.checkoutProduct__info > button:hover {
-  color: white;
-  transform: scale(1.1);
+  @extend button;
 }

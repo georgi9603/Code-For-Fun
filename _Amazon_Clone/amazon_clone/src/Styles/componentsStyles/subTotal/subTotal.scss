@@ -1,3 +1,5 @@
+@import "../../common/primaryButton.scss";
+
 .subtotal {
   display: flex;
   flex-direction: column;
@@ -20,15 +22,5 @@
 }
 
 .subtotal > button {
-  background-color: orange;
-  border-color: #a88734 #9c7e31 #846a29;
-  border: 1px solid;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
-.subtotal > button:hover {
-  color: white;
-  transform: scale(1.1);
+  @extend button;
 }

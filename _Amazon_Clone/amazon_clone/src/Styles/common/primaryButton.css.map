@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,gBAAgB,ECHQ,MAAM;EDI9B,YAAY,ECHQ,OAAO,CAAC,OAAO,CAAC,OAAO;EDI3C,MAAM,EAAE,SAAS;EACjB,aAAa,EAAE,GAAG;EAClB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,OAAO;CAChB;;AAED,AAAA,MAAM,AAAA,MAAM,CAAC;EACX,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,UAAU;CACtB",
+    "sources": [
+        "primaryButton.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "primaryButton.css"
+}

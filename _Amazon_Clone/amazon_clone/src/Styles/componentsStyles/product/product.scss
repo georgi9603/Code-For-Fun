@@ -1,3 +1,5 @@
+@import "../../common/primaryButton.scss";
+
 .product {
   display: flex;
   flex-direction: column;
@@ -35,18 +37,6 @@
 }
 
 .product > button {
+  @extend button;
   font-size: 22px;
-  color: black;
-  background-color: orange;
-  border: 1px solid;
-  border-color: #a88734 #9c7e31 #846a29;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
-.product > button:hover {
-  color: white;
-  transform: scale(1.1);
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStateValue } from './StateProvider'
 import { actionTypes } from '../StateManager/actions/actionTypes';
-import './CheckoutProduct.css'
+import '../Styles/componentsStyles/checkoutProduct/checkoutProduct.scss';
 
 function CheckoutProduct({ id, title, imgURL, price, rating }) {
     const [{ }, dispatch] = useStateValue();

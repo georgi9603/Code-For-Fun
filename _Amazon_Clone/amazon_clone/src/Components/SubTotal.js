@@ -2,7 +2,7 @@ import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from './StateProvider';
 import { getBasketTotal } from '../StateManager/selectors/selectors';
-import './SubTotal.css'
+import '../Styles/componentsStyles/subTotal/subTotal.scss';
 
 function SubTotal() {
     const [{ shoppingCart }] = useStateValue();
