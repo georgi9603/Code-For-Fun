@@ -10,7 +10,7 @@ import { actionTypes } from './StateManager/actions/actionTypes';
 import './App.css';
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -30,7 +30,7 @@ function App() {
     return () => {
       unsubscribe();
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>

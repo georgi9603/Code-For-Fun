@@ -38,7 +38,7 @@ function Header() {
                 <SearchIcon className="header__searchIcon" />
             </div>
             <div className="header__right">
-                <Link to={!user && "/login"} className="header__link">
+                <Link to={"/login"} className="header__link">
                     <div onClick={logout} className="header__option">
                         <span className="header__optionLineOne">
                             Hello {user?.email}
