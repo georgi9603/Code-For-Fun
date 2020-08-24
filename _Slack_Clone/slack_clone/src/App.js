@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
-import Sidebar from './Sidebar';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Chat from './Chat';
-import Login from './Login';
-import { useStateValue } from './StateProvider';
+import Chat from './components/Chat';
+import Login from './pages/Login';
+import { useStateValue } from './components/StateProvider';
 
 function App() {
   const [{ user }, dispatch] = useStateValue()
@@ -22,7 +22,7 @@ function App() {
                 <Chat />
               </Route>
               <Route path="/">
-                <h1>Welcome</h1>
+                <h1>You can browse channels and chat.</h1>
               </Route>
             </Switch>
           </div>

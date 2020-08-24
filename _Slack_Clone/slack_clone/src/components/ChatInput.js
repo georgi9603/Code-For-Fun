@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChatInput.css';
 import { Button } from '@material-ui/core';
-import { db } from './firebase';
+import { db } from '../firebase';
 import { useStateValue } from './StateProvider';
 import firebase from 'firebase';
 import './ChatInput.css';
