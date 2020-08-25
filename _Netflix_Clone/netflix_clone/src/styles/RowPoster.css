@@ -1,0 +1,12 @@
+.rowPoster {
+  width: 100%;
+  object-fit: contain;
+  max-height: 100px;
+  margin-right: 10px;
+  transition: transform 250ms;
+  cursor: pointer;
+}
+
+.rowPoster:hover {
+  transform: scale(1.08);
+}
