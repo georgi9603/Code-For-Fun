@@ -15,8 +15,6 @@ function Row({ title, fetchURL }) {
         fetchData()
     }, [fetchURL])
 
-    console.log(movies)
-
     return (
         <div className="row">
             <h2 className="">{title}</h2>
