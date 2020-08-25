@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/Row.css";
 import axiosInstance from '../requests/axios';
-import RowPoster from '../components/RowPoster';
+import '../styles/Row.css'
 
-function Row({ title, fetchURL }) {
+function Row({ title, fetchURL, isNetflixOriginals }) {
     const [movies, setMovies] = useState([]);
     const baseURL = "https://image.tmdb.org/t/p/original/";
 
@@ -17,10 +17,18 @@ function Row({ title, fetchURL }) {
 
     return (
         <div className="row">
-            <h2 className="">{title}</h2>
-            <div className="row_posters">
-                {movies.map(movie => (
-                    <RowPoster key={movie.id} title={movie.name} imgURL={baseURL + movie.poster_path} title={movie.name} />
+            <h2 className="row__title">{title}</h2>
+            <div className={`row_posters`}>
+                {movies?.map(movie => (
+                    <img
+                        key={movie.id}
+                        className={`row__poster ${isNetflixOriginals && "row__posterLarge"}`}
+                        src={isNetflixOriginals
+                            ? baseURL + movie?.poster_path
+                            : baseURL + movie?.backdrop_path}
+                        alt={movie?.name}
+
+                    />
                 ))}
             </div>
         </div>

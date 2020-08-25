@@ -7,9 +7,9 @@ import Banner from './components/Banner';
 function App() {
   return (
     <div className="app">
-      <Header />
+      {/* <Header /> */}
       <Banner />
-      <Row title={"Netflix Originals"} fetchURL={requests.fetchNetflixOriginals} />
+      <Row title={"Netflix Originals"} fetchURL={requests.fetchNetflixOriginals} isNetflixOriginals />
       <Row title={"Trending Now"} fetchURL={requests.fetchTrending} />
       <Row title={"Top Rated"} fetchURL={requests.fetchTopRated} />
       <Row title={"Action Movies"} fetchURL={requests.fetchActionMovies} />
