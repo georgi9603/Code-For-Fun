@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Banner.css';
-import requests from '../requests/requests';
 import axiosInstance from '../requests/axios';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
-
+import { netflixOriginals } from '../data/data';
+import '../styles/Banner.css';
 
 function Banner() {
     const [movie, setMovie] = useState([]);
@@ -20,7 +19,7 @@ function Banner() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await axiosInstance.get(requests.fetchNetflixOriginals);
+            const response = await axiosInstance.get(netflixOriginals.fetchUrl);
 
             setMovie(
                 response
@@ -30,7 +29,7 @@ function Banner() {
             )
         }
         fetchData()
-    }, [requests.fetchNetflixOriginals]);
+    }, []);
 
     function truncate(str, n) {
         return str?.length > n ? str.substr(0, n - 1) + "..." : str;

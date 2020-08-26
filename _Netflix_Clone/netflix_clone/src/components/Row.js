@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import "../styles/Row.css";
 import axiosInstance from '../requests/axios';
-import '../styles/Row.css';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import "../styles/Row.css";
 
 function Row({ title, fetchURL, isNetflixOriginals }) {
     const [movies, setMovies] = useState([]);
