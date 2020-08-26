@@ -60,3 +60,10 @@
     #111
   );
 }
+
+.banner__trailer {
+  width: 40%;
+  float: right;
+  margin-top: 50px;
+  margin-right: 20px;
+}

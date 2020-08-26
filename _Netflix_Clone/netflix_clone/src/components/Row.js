@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/Row.css";
 import axiosInstance from '../requests/axios';
-import '../styles/Row.css'
+import '../styles/Row.css';
+import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer';
 
 function Row({ title, fetchURL, isNetflixOriginals }) {
     const [movies, setMovies] = useState([]);
+    const [trailerURL, setTrailerURL] = useState("");
     const baseURL = "https://image.tmdb.org/t/p/original/";
+    const options = {
+        height: "390",
+        width: "100%",
+        playerVars: {
+            autoplay: 1
+        }
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -14,6 +24,21 @@ function Row({ title, fetchURL, isNetflixOriginals }) {
         }
         fetchData()
     }, [fetchURL])
+
+    const handleClick = (movie) => {
+        trailerURL
+            ? setTrailerURL("")
+            : movieTrailer(movie?.name || "")
+                .then(url => {
+                    const urlParams = new URLSearchParams(new URL(url).search);
+                    setTrailerURL(urlParams.get('v'));
+                })
+                .catch(err =>
+                    alert(err.messsage === undefined
+                        ? "The Movie is blocket for your country!"
+                        : err.messsage
+                    ))
+    }
 
     return (
         <div className="row">
@@ -27,10 +52,11 @@ function Row({ title, fetchURL, isNetflixOriginals }) {
                             ? baseURL + movie?.poster_path
                             : baseURL + movie?.backdrop_path}
                         alt={movie?.name}
-
+                        onClick={() => handleClick(movie)}
                     />
                 ))}
             </div>
+            {trailerURL && <YouTube videoId={trailerURL} opts={options} />}
         </div>
     )
 }
