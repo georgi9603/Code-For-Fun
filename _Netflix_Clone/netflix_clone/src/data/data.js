@@ -6,6 +6,33 @@ export const netflixOriginals = {
     isNetflixOriginals: true
 }
 
+export const fallBackUrls = [
+    {
+        name: "The 100",
+        url: "https://www.youtube.com/watch?v=aDrsItJ_HU4&t=1s"
+    },
+    {
+        name: "Lucifer",
+        url: "https://www.youtube.com/watch?v=3mTh2joPPj8"
+    },
+    {
+        name: "Late Show with David Letterman",
+        url: "https://www.youtube.com/watch?v=ctBVhyZxXYY"
+    },
+    {
+        name: "American Dad!",
+        url: "https://www.youtube.com/watch?v=apr31MFjg08"
+    },
+    {
+        name: "The Flash",
+        url: "https://www.youtube.com/watch?v=Yj0l7iGKh8g"
+    },
+    {
+        name: "Lovecraft Country",
+        url: "https://www.youtube.com/watch?v=dvamPJp17Ds"
+    },
+]
+
 const movieGenres = [
     {
         genre: "Netflix Originals",

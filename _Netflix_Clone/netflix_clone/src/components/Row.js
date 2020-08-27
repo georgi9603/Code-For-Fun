@@ -3,6 +3,7 @@ import axiosInstance from '../requests/axios';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import "../styles/Row.css";
+import { fallBackUrls } from '../data/data';
 
 function Row({ title, fetchURL, isNetflixOriginals }) {
     const [movies, setMovies] = useState([]);
@@ -19,6 +20,7 @@ function Row({ title, fetchURL, isNetflixOriginals }) {
     useEffect(() => {
         async function fetchData() {
             const response = await axiosInstance.get(fetchURL);
+            if (isNetflixOriginals) console.table(response.data.results)
             setMovies(response.data.results)
         }
         fetchData()
@@ -29,14 +31,23 @@ function Row({ title, fetchURL, isNetflixOriginals }) {
             ? setTrailerURL("")
             : movieTrailer(movie?.name || "")
                 .then(url => {
-                    const urlParams = new URLSearchParams(new URL(url).search);
+                    const urlParams = new URLSearchParams(new URL(url).search)
                     setTrailerURL(urlParams.get('v'));
                 })
-                .catch(err =>
-                    alert(err.messsage === undefined
-                        ? "The Movie is blocket for your country!"
-                        : err.messsage
-                    ))
+                .catch(err => {
+                    const indexOfMovieInFallBack = fallBackUrls.map(e => e.name).indexOf(movie?.name);
+
+                    if (indexOfMovieInFallBack !== -1) {
+                        let urlParams = new URLSearchParams(new URL(fallBackUrls[indexOfMovieInFallBack].url).search)
+                        setTrailerURL(urlParams.get("v"))
+                    } else {
+                        console.log(movie?.name)
+                        alert(err.messsage === undefined
+                            ? "The Movie is blocket for your country!"
+                            : err.messsage
+                        );
+                    }
+                });
     }
 
     return (
