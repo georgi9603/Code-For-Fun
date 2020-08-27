@@ -20,28 +20,30 @@ function Row({ title, fetchURL, isNetflixOriginals }) {
     useEffect(() => {
         async function fetchData() {
             const response = await axiosInstance.get(fetchURL);
-            if (isNetflixOriginals) console.table(response.data.results)
             setMovies(response.data.results)
         }
         fetchData()
-    }, [fetchURL])
+    }, [fetchURL, isNetflixOriginals])
 
     const handleClick = (movie) => {
         trailerURL
             ? setTrailerURL("")
-            : movieTrailer(movie?.name || "")
+            : movieTrailer(movie?.name || movie?.title || "")
                 .then(url => {
                     const urlParams = new URLSearchParams(new URL(url).search)
                     setTrailerURL(urlParams.get('v'));
                 })
                 .catch(err => {
-                    const indexOfMovieInFallBack = fallBackUrls.map(e => e.name).indexOf(movie?.name);
+                    let indexOfMovieInFallBack = -1;
+                    movie?.name !== undefined
+                        ? indexOfMovieInFallBack = fallBackUrls.map(e => e.name).indexOf(movie?.name)
+                        : indexOfMovieInFallBack = fallBackUrls.map(e => e.name).indexOf(movie?.title)
+
 
                     if (indexOfMovieInFallBack !== -1) {
                         let urlParams = new URLSearchParams(new URL(fallBackUrls[indexOfMovieInFallBack].url).search)
                         setTrailerURL(urlParams.get("v"))
                     } else {
-                        console.log(movie?.name)
                         alert(err.messsage === undefined
                             ? "The Movie is blocket for your country!"
                             : err.messsage
@@ -61,7 +63,7 @@ function Row({ title, fetchURL, isNetflixOriginals }) {
                         src={isNetflixOriginals
                             ? baseURL + movie?.poster_path
                             : baseURL + movie?.backdrop_path}
-                        alt={movie?.name}
+                        alt=""
                         onClick={() => handleClick(movie)}
                     />
                 ))}

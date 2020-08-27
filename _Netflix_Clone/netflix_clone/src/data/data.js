@@ -31,6 +31,42 @@ export const fallBackUrls = [
         name: "Lovecraft Country",
         url: "https://www.youtube.com/watch?v=dvamPJp17Ds"
     },
+    {
+        name: "Grey's Anatomy",
+        url: "https://www.youtube.com/watch?v=q1pcpgREQ5c"
+    },
+    {
+        name: "NCIS",
+        url: "https://www.youtube.com/watch?v=fRfpzhmQGFY"
+    },
+    {
+        name: "Criminal Minds",
+        url: "https://www.youtube.com/watch?v=NTYxiJBbEZk"
+    },
+    {
+        name: "Riverdale",
+        url: "https://www.youtube.com/watch?v=HxtLlByaYTc"
+    },
+    {
+        name: "JoJo's Bizarre Adventure",
+        url: "https://www.youtube.com/watch?v=fvSKmPdD2a4"
+    },
+    {
+        name: "Hawaii Five-0",
+        url: "https://www.youtube.com/watch?v=gRrIL9Moba4"
+    },
+    {
+        name: "Marvel's Daredevil",
+        url: "https://www.youtube.com/watch?v=n83s6NO1NE0"
+    },
+    {
+        name: "Ash vs Evil Dead",
+        url: "https://www.youtube.com/watch?v=MdZUN8jdY-g"
+    },
+    {
+        name: "Avatar: The Last Airbender",
+        url: "https://www.youtube.com/watch?v=7OvjiVEhbSk"
+    },
 ]
 
 const movieGenres = [

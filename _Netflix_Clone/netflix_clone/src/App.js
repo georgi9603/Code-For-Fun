@@ -13,6 +13,7 @@ function App() {
       { movieGenres
         ?.map(movie => {
           return <Row
+            key={movie.genre}
             title={movie.genre}
             fetchURL={movie.fetchUrl}
             isNetflixOriginals={movie?.isNetflixOriginals} />
