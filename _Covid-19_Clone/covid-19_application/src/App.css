@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+}
+
+.app__info {
+  display: flex;
+  padding: 20px;
+}
