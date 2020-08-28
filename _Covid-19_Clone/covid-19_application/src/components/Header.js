@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { FormControl, Select, MenuItem } from '@material-ui/core';
 import './componentStyles/Header.css';
 
-function Header() {
+function Header({ selectedCountry, onCountryChange }) {
     const [countries, setCountries] = useState([]);
-    const [selectedCountry, setSelectedCountry] = useState("worldwide");
 
     useEffect(() => {
         const getCountriesData = async () => {
@@ -26,11 +25,6 @@ function Header() {
 
         getCountriesData();
     }, [])
-
-    const onCountryChange = async e => {
-        const countryCode = e.target.value;
-        setSelectedCountry(countryCode)
-    }
 
     return (
         <div className="app__header">

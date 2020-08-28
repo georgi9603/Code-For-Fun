@@ -2,7 +2,21 @@
   margin: 0;
 }
 
-.app__info {
+body {
+  background-color: #f5f6fa;
+}
+
+.app {
   display: flex;
-  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.app__left {
+  flex: 0.9;
+}
+
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
 }
