@@ -7,11 +7,7 @@ function Header({ selectedCountry, onCountryChange }) {
 
     useEffect(() => {
         const getCountriesData = async () => {
-            await fetch("https://disease.sh/v3/covid-19/countries", {
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
+            await fetch("https://disease.sh/v3/covid-19/countries")
                 .then(response => response.json())
                 .then(data => {
                     const countries = data.map(country => ({
