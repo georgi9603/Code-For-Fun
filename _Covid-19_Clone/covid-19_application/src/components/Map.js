@@ -1,10 +1,14 @@
 import React from 'react';
-import "./componentStyles/Map.css"
+import { Map as LeafletMap, TileLayer } from 'react-leaflet';
+import "./componentStyles/Map.css";
+import "leaflet/dist/leaflet.css";
 
-function Map() {
+function Map({ center, zoom }) {
     return (
-        <div>
-            <h1>I am a map</h1>
+        <div className='map'>
+            <LeafletMap center={center} zoom={zoom}>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            </LeafletMap>
         </div>
     )
 }

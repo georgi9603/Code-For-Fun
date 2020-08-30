@@ -5,8 +5,10 @@ import Map from './Map';
 import "./componentStyles/AppLeft.css"
 
 function AppLeft() {
+    const worldCenterCoordinates = { lat: 34.80746, lng: -40.4796 };
     const [selectedCountry, setSelectedCountry] = useState("worldwide");
     const [countryInfo, setCountryInfo] = useState({});
+    const [mapCenter, setMapCenter] = useState(worldCenterCoordinates);
 
     useEffect(() => {
         const getInitialWorldWideInfo = async () => {
@@ -29,7 +31,12 @@ function AppLeft() {
             .then(response => response.json())
             .then(data => {
                 setSelectedCountry(countryCode);
-                setCountryInfo(data)
+                setCountryInfo(data);
+                console.log(data)
+
+                data.hasOwnProperty('country')
+                    ? setMapCenter([data.countryInfo.lat, data.countryInfo.long])
+                    : setMapCenter(worldCenterCoordinates)
             })
     }
 
@@ -42,7 +49,7 @@ function AppLeft() {
                 <InfoBox title="Deaths" cases={countryInfo?.todayDeaths} total={countryInfo?.deaths} />
             </div>
 
-            <Map />
+            <Map center={mapCenter} zoom={2.5} />
         </div>
     )
 }
