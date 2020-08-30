@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import AppLeft from './components/AppLeft';
-import Table from './components/Table';
 import { Card, CardContent } from '@material-ui/core';
 import { sortCountriesByCasesDesc, transformChartData } from './Utils/utils';
+import AppLeft from './components/AppLeft';
+import Table from './components/Table';
 import LineGraph from './components/LineGraph';
+import './App.css';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -19,7 +19,7 @@ function App() {
         })
     }
     getInitialWorldWideInfo();
-  }, [])
+  }, []);
 
 
   useEffect(() => {
