@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="app">
-      <AppLeft className="app__left" />
+      <AppLeft countries={countries} className="app__left" />
       {/* //TODO Add app__right */}
       <Card className="app__right">
         <CardContent>

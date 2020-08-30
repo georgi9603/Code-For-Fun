@@ -4,11 +4,11 @@ import InfoBox from './InfoBox';
 import Map from './Map';
 import "./componentStyles/AppLeft.css"
 
-function AppLeft() {
-    const worldCenterCoordinates = { lat: 34.80746, lng: -40.4796 };
+function AppLeft({ countries }) {
+    const worldCenterCoordinates = { mapCenter: { lat: 34.80746, lng: -40.4796 }, zoom: 2 };
     const [selectedCountry, setSelectedCountry] = useState("worldwide");
     const [countryInfo, setCountryInfo] = useState({});
-    const [mapCenter, setMapCenter] = useState(worldCenterCoordinates);
+    const [mapInfo, setMapInfo] = useState(worldCenterCoordinates);
 
     useEffect(() => {
         const getInitialWorldWideInfo = async () => {
@@ -35,8 +35,8 @@ function AppLeft() {
                 console.log(data)
 
                 data.hasOwnProperty('country')
-                    ? setMapCenter([data.countryInfo.lat, data.countryInfo.long])
-                    : setMapCenter(worldCenterCoordinates)
+                    ? setMapInfo({ mapCenter: { lat: data.countryInfo.lat, lng: data.countryInfo.long }, zoom: 4 })
+                    : setMapInfo(worldCenterCoordinates)
             })
     }
 
@@ -49,7 +49,7 @@ function AppLeft() {
                 <InfoBox title="Deaths" cases={countryInfo?.todayDeaths} total={countryInfo?.deaths} />
             </div>
 
-            <Map center={mapCenter} zoom={2.5} />
+            <Map countries={countries} center={mapInfo.mapCenter} zoom={mapInfo.zoom} />
         </div>
     )
 }
