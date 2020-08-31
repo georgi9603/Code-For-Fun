@@ -10,7 +10,7 @@ export const sortCountriesByNewCasesDesc = (countries) => {
         .sort((a, b) => a.todayCases > b.todayCases ? -1 : 1)
 }
 
-export const transformChartData = last120DaysData => {
+export const transformChartData = (last120DaysData, dataType = "cases") => {
     const chartData = [];
     let lastDataPoint;
 
@@ -18,11 +18,11 @@ export const transformChartData = last120DaysData => {
         if (lastDataPoint) {
             let newDataPoint = {
                 x: date,
-                y: last120DaysData['cases'][date] - lastDataPoint
+                y: last120DaysData[dataType][date] - lastDataPoint
             }
             chartData.push(newDataPoint);
         }
-        lastDataPoint = last120DaysData['cases'][date];
+        lastDataPoint = last120DaysData[dataType][date];
     }
     return chartData;
 }

@@ -4,7 +4,7 @@ import InfoBox from './InfoBox';
 import Map from './Map';
 import "./componentStyles/AppLeft.css"
 
-function AppLeft({ countries }) {
+function AppLeft({ countries, ...props }) {
     const worldCenterCoordinates = { mapCenter: { lat: 34.80746, lng: -40.4796 }, zoom: 2 };
     const [selectedCountry, setSelectedCountry] = useState("worldwide");
     const [countryInfo, setCountryInfo] = useState({});
@@ -32,8 +32,6 @@ function AppLeft({ countries }) {
             .then(data => {
                 setSelectedCountry(countryCode);
                 setCountryInfo(data);
-                console.log(data)
-
                 data.hasOwnProperty('country')
                     ? setMapInfo({ mapCenter: { lat: data.countryInfo.lat, lng: data.countryInfo.long }, zoom: 4 })
                     : setMapInfo(worldCenterCoordinates)
@@ -44,9 +42,9 @@ function AppLeft({ countries }) {
         <div className="appLeft">
             <Header selectedCountry={selectedCountry} onCountryChange={onCountryChange} />
             <div className="app__info">
-                <InfoBox title="Coronavirus" cases={countryInfo?.todayCases} total={countryInfo?.cases} />
-                <InfoBox title="Recovered" cases={countryInfo?.todayRecovered} total={countryInfo?.recovered} />
-                <InfoBox title="Deaths" cases={countryInfo?.todayDeaths} total={countryInfo?.deaths} />
+                <InfoBox onClick={e => props.onClick("cases")} title="Coronavirus" cases={countryInfo?.todayCases} total={countryInfo?.cases} />
+                <InfoBox onClick={e => props.onClick("recovered")} title="Recovered" cases={countryInfo?.todayRecovered} total={countryInfo?.recovered} />
+                <InfoBox onClick={e => props.onClick("deaths")} title="Deaths" cases={countryInfo?.todayDeaths} total={countryInfo?.deaths} />
             </div>
 
             <Map countries={countries} center={mapInfo.mapCenter} zoom={mapInfo.zoom} />

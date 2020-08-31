@@ -3,10 +3,10 @@ import './componentStyles/LineGraph.css';
 import { Line } from 'react-chartjs-2';
 import { lineChartOptions } from '../Utils/utils';
 
-function LineGraph({ last120DaysData }) {
+function LineGraph({ last120DaysData, dataType = "cases" }) {
     return (
         <div className="lineGraoh">
-            <h3>Worldwide new cases</h3>
+            <h3>Worldwide new {dataType}</h3>
             {Object.keys(last120DaysData)?.length > 0 && (
                 <Line
                     options={lineChartOptions}

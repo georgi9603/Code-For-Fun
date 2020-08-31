@@ -1,4 +1,11 @@
+.appLeft {
+}
+
 .app__info {
   display: flex;
   justify-content: space-between;
+}
+
+.app__info > * {
+  cursor: pointer;
 }
