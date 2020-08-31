@@ -37,7 +37,12 @@ function App() {
 
   return (
     <div className="app">
-      <AppLeft onClick={e => setDataType(e)} countries={countries} className="app__left" />
+      <AppLeft
+        className="app__left"
+        onClick={e => setDataType(e)}
+        dataType={dataType}
+        countries={countries}
+      />
       <Card className="app__right">
         <CardContent>
           <Table countries={sortCountriesByCasesDesc(countries)} />

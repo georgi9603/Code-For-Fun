@@ -4,8 +4,8 @@ import InfoBox from './InfoBox';
 import Map from './Map';
 import "./componentStyles/AppLeft.css"
 
-function AppLeft({ countries, ...props }) {
-    const worldCenterCoordinates = { mapCenter: { lat: 34.80746, lng: -40.4796 }, zoom: 2 };
+function AppLeft({ countries, dataType, ...props }) {
+    const worldCenterCoordinates = { mapCenter: { lat: 30, lng: 15 }, zoom: 1.5 };
     const [selectedCountry, setSelectedCountry] = useState("worldwide");
     const [countryInfo, setCountryInfo] = useState({});
     const [mapInfo, setMapInfo] = useState(worldCenterCoordinates);
@@ -42,9 +42,25 @@ function AppLeft({ countries, ...props }) {
         <div className="appLeft">
             <Header selectedCountry={selectedCountry} onCountryChange={onCountryChange} />
             <div className="app__info">
-                <InfoBox onClick={e => props.onClick("cases")} title="Coronavirus" cases={countryInfo?.todayCases} total={countryInfo?.cases} />
-                <InfoBox onClick={e => props.onClick("recovered")} title="Recovered" cases={countryInfo?.todayRecovered} total={countryInfo?.recovered} />
-                <InfoBox onClick={e => props.onClick("deaths")} title="Deaths" cases={countryInfo?.todayDeaths} total={countryInfo?.deaths} />
+                <InfoBox
+                    isActiveStyle={dataType === "cases" && "infobox__blue"}
+                    onClick={e => props.onClick("cases")}
+                    title="Coronavirus" cases={countryInfo?.todayCases}
+                    total={countryInfo?.cases}
+                />
+                <InfoBox
+                    isActiveStyle={dataType === "recovered" && "infobox__green"}
+                    onClick={e => props.onClick("recovered")}
+                    title="Recovered"
+                    cases={countryInfo?.todayRecovered}
+                    total={countryInfo?.recovered}
+                />
+                <InfoBox
+                    isActiveStyle={dataType === "deaths" && "infobox__red"}
+                    onClick={e => props.onClick("deaths")}
+                    title="Deaths"
+                    cases={countryInfo?.todayDeaths}
+                    total={countryInfo?.deaths} />
             </div>
 
             <Map countries={countries} center={mapInfo.mapCenter} zoom={mapInfo.zoom} />

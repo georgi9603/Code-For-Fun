@@ -1,4 +1,5 @@
 .appLeft {
+  flex: 0.8;
 }
 
 .app__info {

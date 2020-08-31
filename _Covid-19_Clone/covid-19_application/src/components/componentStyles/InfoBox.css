@@ -1,0 +1,11 @@
+.infobox__green {
+  border-top: 5px solid green;
+}
+
+.infobox__red {
+  border-top: 5px solid red;
+}
+
+.infobox__blue {
+  border-top: 5px solid blue;
+}
