@@ -2,10 +2,38 @@
   border-top: 5px solid green;
 }
 
+.infobox__green .infobox__cases {
+  color: green;
+}
+
+.infobox__green .infobox__total {
+  color: green;
+}
+
 .infobox__red {
   border-top: 5px solid red;
 }
 
+.infobox__red .infobox__cases {
+  color: red;
+}
+
+.infobox__red .infobox__total {
+  color: red;
+}
+
 .infobox__blue {
   border-top: 5px solid blue;
+}
+
+.infobox__blue .infobox__cases {
+  color: blue;
+}
+
+.infobox__blue .infobox__total {
+  color: blue;
+}
+
+.infobox__totalText {
+  color: black;
 }
