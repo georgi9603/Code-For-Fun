@@ -27,6 +27,10 @@ export const transformChartData = (last120DaysData, dataType = "cases") => {
     return chartData;
 }
 
+export const formatStats = (stats) => {
+    return stats ? `+${numeral(stats).format("0.0a")}` : "+0"
+}
+
 export const lineChartOptions = {
     legend: {
         display: false,

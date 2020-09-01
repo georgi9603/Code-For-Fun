@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import InfoBox from './InfoBox';
 import Map from './Map';
+import { formatStats } from '../Utils/utils';
 import "./componentStyles/AppLeft.css"
 
 function AppLeft({ countries, dataType, ...props }) {
@@ -36,7 +37,9 @@ function AppLeft({ countries, dataType, ...props }) {
                     ? setMapInfo({ mapCenter: { lat: data.countryInfo.lat, lng: data.countryInfo.long }, zoom: 4 })
                     : setMapInfo(worldCenterCoordinates)
             })
-    }
+    };
+
+
 
     return (
         <div className="appLeft">
@@ -45,22 +48,22 @@ function AppLeft({ countries, dataType, ...props }) {
                 <InfoBox
                     isActiveStyle={dataType === "cases" && "infobox__blue"}
                     onClick={e => props.onClick("cases")}
-                    title="Coronavirus" cases={countryInfo?.todayCases}
-                    total={countryInfo?.cases}
+                    title="Coronavirus" cases={formatStats(countryInfo?.todayCases)}
+                    total={formatStats(countryInfo?.cases)}
                 />
                 <InfoBox
                     isActiveStyle={dataType === "recovered" && "infobox__green"}
                     onClick={e => props.onClick("recovered")}
                     title="Recovered"
-                    cases={countryInfo?.todayRecovered}
-                    total={countryInfo?.recovered}
+                    cases={formatStats(countryInfo?.todayRecovered)}
+                    total={formatStats(countryInfo?.recovered)}
                 />
                 <InfoBox
                     isActiveStyle={dataType === "deaths" && "infobox__red"}
                     onClick={e => props.onClick("deaths")}
                     title="Deaths"
-                    cases={countryInfo?.todayDeaths}
-                    total={countryInfo?.deaths} />
+                    cases={formatStats(countryInfo?.todayDeaths)}
+                    total={formatStats(countryInfo?.deaths)} />
             </div>
 
             <Map countries={countries} center={mapInfo.mapCenter} zoom={mapInfo.zoom} />
