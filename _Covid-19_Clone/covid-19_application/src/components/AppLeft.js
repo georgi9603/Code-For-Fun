@@ -39,8 +39,6 @@ function AppLeft({ countries, dataType, ...props }) {
             })
     };
 
-
-
     return (
         <div className="appLeft">
             <Header selectedCountry={selectedCountry} onCountryChange={onCountryChange} />
