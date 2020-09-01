@@ -64,7 +64,12 @@ function AppLeft({ countries, dataType, ...props }) {
                     total={formatStats(countryInfo?.deaths)} />
             </div>
 
-            <Map countries={countries} center={mapInfo.mapCenter} zoom={mapInfo.zoom} />
+            <Map
+                dataType={dataType}
+                countries={countries}
+                center={mapInfo.mapCenter}
+                zoom={mapInfo.zoom}
+            />
         </div>
     )
 }
