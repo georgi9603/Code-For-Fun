@@ -1,4 +1,4 @@
-.login {
+.register {
   background-color: white;
   height: 100vh;
   display: flex;
@@ -6,14 +6,14 @@
   align-items: center;
 }
 
-.login__logo {
+.register__logo {
   width: 100px;
   object-fit: contain;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.login__container {
+.register__container {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -21,22 +21,22 @@
   width: 300px;
 }
 
-.login__container > h1 {
+.register__container > h1 {
   text-align: center;
 }
 
-.login__container > form > h5 {
+.register__container > form > h5 {
   margin-bottom: 5px;
 }
 
-.login__container > form > input {
+.register__container > form > input {
   height: 30px;
   margin-bottom: 10px;
   background-color: white;
   width: 98%;
 }
 
-.login__container > form > button {
+.register__container > form > button {
   font-size: 22px;
   color: black;
   background-color: orange;
@@ -50,31 +50,41 @@
   height: 30px;
 }
 
-.login__container > form > button:hover {
+.register__container > form > button:hover {
   color: white;
   transform: scale(1.1);
 }
 
-.login__container > p {
+.register__container > p {
   margin-top: 15px;
   font-size: 15px;
 }
 
-.login__registerLink {
+.register__container .register__loginLink {
   text-align: center;
 }
 
-.login__container .login__registerLink > button {
+.register__container .register__loginLink > button {
   font-size: 20px;
   color: black;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
   border-radius: 2px;
-  margin-top: 15px;
+  margin-top: 20px;
   cursor: pointer;
 }
 
-.login__container .login__registerLink > button:hover {
-  color: white;
+.register__container .register__loginLink > button:hover {
   transform: scale(1.1);
+  color: white;
+}
+
+.register__repeatPasswordInvalid {
+  color: rgb(255, 69, 0);
+  border: 1px solid;
+}
+
+.register__repeatPasswordInvalid:focus {
+  color: black;
+  outline: none;
 }

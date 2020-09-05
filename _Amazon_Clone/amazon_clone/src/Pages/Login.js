@@ -50,7 +50,9 @@ function Login() {
                     By signing-in you agree to Amazon's Conditions of Use & Sale.
                     Please see our Privacy Notice, our Cokkies Notice and our interest-Based Ads Notice.
                 </p>
-                <button onClick={createAccount}>Create your Amazon Account</button>
+                <Link className="login__registerLink" to='/register'>
+                    <button >Create your Amazon Account</button>
+                </Link>
             </div>
         </div>
     )
