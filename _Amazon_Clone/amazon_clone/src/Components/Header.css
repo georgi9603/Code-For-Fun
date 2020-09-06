@@ -45,7 +45,7 @@
   text-decoration: none;
 }
 
-.header__option {
+.header__option > * {
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
@@ -62,6 +62,7 @@
 }
 
 .header__optionBasket {
+  margin-top: 5px;
   display: flex;
   align-items: center;
 }

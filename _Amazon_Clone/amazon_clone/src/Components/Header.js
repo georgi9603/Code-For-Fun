@@ -38,50 +38,58 @@ function Header() {
                 <SearchIcon className="header__searchIcon" />
             </div>
             <div className="header__right">
-                <Link to={"/login"} className="header__link">
-                    <div onClick={logout} className="header__option">
-                        <span className="header__optionLineOne">
-                            Hello {user?.email}
+                {user
+                    ? <Link to={"/login"} className="header__link">
+                        <div onClick={logout} className="header__option">
+                            <span className="header__optionLineOne">
+                                Hello {user?.email}
+                            </span>
+                            <span className="header__optionLineTwo">
+                                Sign Out
                         </span>
+                        </div>
+                    </Link>
+                    :
+                    <div className="header__option">
+                        <Link to={"/login"} className="header__link">
+                            <span className="header__optionLineOne">
+                                Sign In
+                                </span>
+                        </Link>
+                        <Link to="/register" className="header__link">
+                            <span className="header__optionLineTwo">
+                                Sign up
+                            </span>
+                        </Link>
+                    </div>}
+                <Link to="/Login" className="header__link">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">
+                            Returns
+                            </span>
                         <span className="header__optionLineTwo">
-                            {user ? 'Sign Out' : 'Sign In'}
+                            & Orders
                         </span>
                     </div>
                 </Link>
-                <div className="header__amount">
-                    <Link to="/Login" className="header__link">
-                        <div className="header__option">
-                            <span className="header__optionLineOne">
-                                Returns
+                <Link to="/Login" className="header__link">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">
+                            Your
                             </span>
-                            <span className="header__optionLineTwo">
-                                & Orders
+                        <span className="header__optionLineTwo">
+                            Prime
                         </span>
-                        </div>
-                    </Link>
-                </div>
-                <div className="header__yourprime">
-                    <Link to="/Login" className="header__link">
-                        <div className="header__option">
-                            <span className="header__optionLineOne">
-                                Your
-                            </span>
-                            <span className="header__optionLineTwo">
-                                Prime
+                    </div>
+                </Link>
+                <Link to="/Checkout" className="header__link">
+                    <div className="header__optionBasket">
+                        <BasketIcon />
+                        <span className="header__optionLineTwo header__basketCount">
+                            {shoppingCart?.length}
                         </span>
-                        </div>
-                    </Link>
-                </div>
-                <div className="header__basket">
-                    <Link to="/Checkout" className="header__link">
-                        <div className="header__optionBasket">
-                            <BasketIcon />
-                            <span className="header__optionLineTwo header__basketCount">
-                                {shoppingCart?.length}
-                            </span>
-                        </div>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             </div>
         </nav>
     )
