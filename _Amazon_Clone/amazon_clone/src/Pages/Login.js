@@ -18,16 +18,6 @@ function Login() {
             .catch(e => alert(e.message));
     }
 
-    const createAccount = e => {
-        e.preventDefault();
-
-        auth.createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                history.push("/")
-            })
-            .catch(e => alert(e.message));
-    }
-
     return (
         <div className="login">
             <Link to="/">

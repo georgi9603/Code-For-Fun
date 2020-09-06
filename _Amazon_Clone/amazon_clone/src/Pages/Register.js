@@ -54,7 +54,7 @@ function Register() {
                     <button onClick={createAccount} type="submit">Create new account</button>
                 </form>
                 <p>
-                    By signing-in you agree to Amazon's Conditions of Use & Sale.
+                    By signing-up you agree to Amazon's Conditions of Use & Sale.
                     Please see our Privacy Notice, our Cokkies Notice and our interest-Based Ads Notice.
                 </p>
                 <Link to="/login" className="register__loginLink">

@@ -1,8 +1,16 @@
+.checkout__content {
+  display: grid;
+  min-width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .checkout_ad {
   width: 100%;
   margin-bottom: 10px;
 }
 
-.checkout {
-  display: flex;
+@media screen and (max-width: 1000px) {
+  .checkout__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

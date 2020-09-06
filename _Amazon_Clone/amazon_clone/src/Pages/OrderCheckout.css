@@ -1,0 +1,79 @@
+.orderCheckout {
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10%;
+  margin-top: 1%;
+}
+
+.orderCheckout__logo {
+  width: 100px;
+  object-fit: contain;
+  margin-top: 30px;
+}
+
+.orderCheckout__container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 400px;
+}
+
+.orderCheckout__container > h1 {
+  text-align: center;
+}
+
+.orderCheckout__container > form > h5 {
+  margin-bottom: 5px;
+}
+
+.orderCheckout__container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+}
+
+.orderCheckout__container > form > button {
+  font-size: 22px;
+  color: black;
+  background-color: orange;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+}
+
+.orderCheckout__container > form > button:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.orderCheckout__container > p {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.orderCheckout__container .orderCheckout__loginLink {
+  text-align: center;
+}
+
+.orderCheckout__container .orderCheckout__loginLink > button {
+  font-size: 20px;
+  color: black;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 2px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.orderCheckout__container .orderCheckout__loginLink > button:hover {
+  transform: scale(1.1);
+  color: white;
+}
