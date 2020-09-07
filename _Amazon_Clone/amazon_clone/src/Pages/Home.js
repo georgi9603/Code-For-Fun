@@ -8,15 +8,28 @@ import './Home.css';
 
 function Home() {
     const [{ products }] = useStateValue(initialState.products);
-    const [thirdRowProduct, setThirdRowProduct] = useState(undefined);
+    const [firstRowProducts, setFirstRowProducts] = useState(undefined);
+    const [secondRowProducts, setSecondRowProduct] = useState(undefined);
+    const [thirdRowProducts, setThirdRowProducts] = useState(undefined);
 
     useEffect(() => {
-        setThirdRowProduct(products?.find(product => product.title === "Smart TV"))
+        setFirstRowProducts(products
+            ?.filter(product =>
+                product.title === "Smartphone"
+                || product.title === "Multy mixer"))
+        setSecondRowProduct(products
+            ?.filter(product =>
+                product.title === "Fashion sneakers"
+                || product.title === "Vintage camera"
+                || product.title === "Headphones"));
+        setThirdRowProducts(products
+            ?.find(product =>
+                product.title === "Smart TV"))
     }, [products])
 
     return (
         <div className="row">
-            {thirdRowProduct
+            {thirdRowProducts && secondRowProducts && firstRowProducts
                 ? <div >
                     <img
                         className="home__image"
@@ -25,7 +38,7 @@ function Home() {
                     />
 
                     <div className="home__row">
-                        {products.slice(0, 2)?.map(product => {
+                        {firstRowProducts?.map(product => {
                             return <Product
                                 key={product.title}
                                 title={product.title}
@@ -36,7 +49,7 @@ function Home() {
                         })}
                     </div>
                     <div className="home__row">
-                        {products.slice(2, 5)?.map(product => {
+                        {secondRowProducts?.map(product => {
                             return <Product
                                 key={product.title}
                                 title={product.title}
@@ -48,11 +61,11 @@ function Home() {
                     </div>
                     <div className="home__row">
                         <Product
-                            key={thirdRowProduct?.title}
-                            title={thirdRowProduct?.title}
-                            price={thirdRowProduct?.price}
-                            imgURL={thirdRowProduct?.imgURL}
-                            rating={thirdRowProduct?.rating}
+                            key={thirdRowProducts?.title}
+                            title={thirdRowProducts?.title}
+                            price={thirdRowProducts?.price}
+                            imgURL={thirdRowProducts?.imgURL}
+                            rating={thirdRowProducts?.rating}
                         />
                     </div>
                 </div>
