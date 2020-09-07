@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Product from '../Components/Product';
+import { initialState } from '../StateManager/initialState/initialState';
+import { useStateValue } from '../Components/StateProvider';
+
 import './Home.css';
 
 function Home() {
+    const [{ products }] = useStateValue(initialState.products)
+
     return (
         <div className="home">
             <img
@@ -12,7 +17,16 @@ function Home() {
             />
 
             <div className="home__row">
-                <Product
+                {products?.map(product => {
+                    return <Product
+                        key={product.title}
+                        title={product.title}
+                        price={product.price}
+                        imgURL={product.picURL}
+                        rating={product.rating}
+                    />
+                })}
+                {/* <Product
                     key={11}
                     id={1}
                     title="Smartphone"
@@ -27,7 +41,7 @@ function Home() {
                     price={259.99}
                     imgURL="https://images.unsplash.com/photo-1578643463396-0997cb5328c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"
                     rating={3}
-                />
+                /> */}
             </div>
             <div className="home__row">
                 <Product

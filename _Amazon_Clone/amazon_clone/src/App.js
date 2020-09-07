@@ -7,7 +7,7 @@ import Register from './Pages/Register.js';
 import OrderCheckout from './Pages/OrderCheckout';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useStateValue } from './Components/StateProvider';
-import { auth } from './firebase';
+import { auth, database } from './firebase';
 import { actionTypes } from './StateManager/actions/actionTypes';
 import './App.css';
 
@@ -33,6 +33,19 @@ function App() {
       unsubscribe();
     }
   }, [dispatch]);
+
+  useEffect(() => {
+    const getData = () => {
+      database
+        .collection("products")
+        .onSnapshot(snapshot => dispatch({
+          type: actionTypes.INITIATE_PRODUCTS,
+          products: snapshot.docs.map(doc => doc.data())
+        }))
+    }
+
+    getData();
+  }, [dispatch])
 
   return (
     <Router>

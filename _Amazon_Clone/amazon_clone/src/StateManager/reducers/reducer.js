@@ -23,6 +23,11 @@ const reducer = (state, action) => {
                 ...state,
                 shoppingCart: action.shoppingCart
             }
+        case actionTypes.INITIATE_PRODUCTS:
+            return {
+                ...state,
+                products: action.products,
+            }
         default:
             return state;
     }
