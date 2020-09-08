@@ -27,9 +27,13 @@ function Home() {
                 product.title === "Smart TV"))
     }, [products])
 
+    const areRowsReady = () => {
+        return thirdRowProducts && secondRowProducts && firstRowProducts
+    }
+
     return (
         <div className="row">
-            {thirdRowProducts && secondRowProducts && firstRowProducts
+            {areRowsReady()
                 ? <div >
                     <img
                         className="home__image"
