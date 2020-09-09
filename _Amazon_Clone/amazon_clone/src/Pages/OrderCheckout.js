@@ -14,19 +14,34 @@ function OrderCheckout() {
 
     const handleSubmitForm = (e) => {
         e.preventDefault()
-        const orderObject = {
-            customer: {
-                firstName: firstName,
-                lastName: lastName,
-                phoneNumber: phoneNumber,
-                address: address,
-                secondAddress: secondAddress
-            },
-            products: shoppingCart
+
+        const validateShoopingCartIsNotEmpty = () => shoppingCart.length !== 0 ? true : false
+
+
+        const validateIfRequiredFieldsAreNotEmpty = () => firstName.length >= 1
+            && lastName.length >= 1
+            && phoneNumber.length >= 1
+            && address.length >= 1
+            ? true
+            : false
+
+        if (validateShoopingCartIsNotEmpty() && validateIfRequiredFieldsAreNotEmpty()) {
+            const orderObject = {
+                customer: {
+                    firstName: firstName,
+                    lastName: lastName,
+                    phoneNumber: phoneNumber,
+                    address: address,
+                    secondAddress: secondAddress
+                },
+                products: shoppingCart
+            }
+        } else {
+            alert("Not all required fields are filled or shopping cart is empty!")
         }
 
-        //TODO FE validation before sending to db if the fields required are filled
-        //TODO FE validation if shopping card is empty
+        //TODO show shopping cart alert and check before this page loads. 
+        //TODO on typing show which fields are not valid and some info icon what is valid field.
         //TODO If shopping card or fields are empty or not valid alert error and no save to DB 
         //TODO add save to DB
 
