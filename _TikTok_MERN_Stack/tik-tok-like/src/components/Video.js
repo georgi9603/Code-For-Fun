@@ -16,7 +16,7 @@ function Video() {
     return (
         <div className="video">
             <video
-                className="video__mainVideo"
+                className="video__player"
                 onClick={handleClickOnVideo}
                 loop
                 ref={videoRef}
