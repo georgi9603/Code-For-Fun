@@ -7,8 +7,10 @@ function Video() {
 
     const handleClickOnVideo = () => {
         if (shoutPlay) {
+            videoRef.current.pause();
             setShouldPlay(false)
         } else {
+            videoRef.current.play();
             setShouldPlay(true)
         }
     }
