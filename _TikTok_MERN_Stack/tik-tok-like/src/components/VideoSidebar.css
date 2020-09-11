@@ -19,6 +19,10 @@
   color: red;
 }
 
+.videoSidebar__liked {
+  color: red;
+}
+
 .videoSidebar__button:hover > .videoSidebar__buttonMessage {
   color: #bebebe;
 }
