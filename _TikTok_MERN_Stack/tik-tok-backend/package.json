@@ -1,0 +1,11 @@
+{
+  "name": "tik-tok-backend",
+  "version": "1.0.0",
+  "description": "Tik tok backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Georgi K.",
+  "license": "ISC"
+}
