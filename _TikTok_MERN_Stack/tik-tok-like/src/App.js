@@ -11,12 +11,18 @@ function App() {
           likes={1000}
           messages={420}
           shares={20}
+          profile="lotterlive"
+          description="cool car show off"
+          tickerSong="I got 99 problems but DEVELOPMENT AIN'T one!"
         />
         <Video
           videoURL="https://v77.tiktokcdn.com/25438f70e2115fe3d4e40e13f7962222/5f5ce958/video/tos/useast2a/tos-useast2a-ve-0068c001/1a3678d24d7b45a6969d6d6c235a81a8/?a=1233&br=2728&bt=1364&cr=0&cs=0&cv=1&dr=0&ds=3&er=&l=20200912092921010190218203510F0E25&lr=tiktok_m&mime_type=video_mp4&qs=0&rc=M2Y6ZWQ8aHVtdzMzaTczM0ApOzg3ZjU4OzxkNzU0NDM1ZGdsZW1xXmRgbjZfLS1gMTZzc2M2YzJhYjQ1MzA1YzY0X146Yw%3D%3D&vl=&vr="
           likes={1000}
           messages={420}
           shares={20}
+          profile="some profile"
+          description="description"
+          tickerSong="I got 99 problems but DEVELOPMENT AIN'T one!"
         />
       </div>
     </div>

@@ -6,7 +6,7 @@ import './Video.css';
 import VideoFooter from './VideoFooter';
 import VideoSidebar from './VideoSidebar';
 
-function Video({ videoURL, likes, messages, shares }) {
+function Video({ videoURL, likes, messages, shares, profile, description, tickerSong }) {
     const videoRef = useRef(null)
     const [shoutPlay, setShouldPlay] = useState(false)
 
@@ -30,9 +30,10 @@ function Video({ videoURL, likes, messages, shares }) {
                 src={videoURL}
             >
             </video>
-
             <VideoFooter
-
+                profile={profile}
+                description={description}
+                tickerSong={tickerSong}
             />
             <VideoSidebar
                 likes={likes}
