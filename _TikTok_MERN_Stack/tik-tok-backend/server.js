@@ -9,6 +9,14 @@ const port = 9000;
 // middlewares
 
 // DB config
+const connectionString =
+    "mongodb+srv://admin:AMq46XeH9fC7RNED@cluster0.sdfil.mongodb.net/Tik-Tok-DB?retryWrites=true&w=majority";
+
+mongoose.connect(connectionString, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+})
 
 // API endpoints
 app.get("/", (req, res) => {
