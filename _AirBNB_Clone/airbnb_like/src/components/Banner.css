@@ -6,10 +6,22 @@
   position: relative;
 }
 
+.banner__dateSearch {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner__dateSearchButton {
+  background-color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  color: #ff7779 !important;
+}
+
 .banner__info {
   background-color: black;
   color: white;
-  padding-top: 50px;
+  padding-top: 25px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 40px;
