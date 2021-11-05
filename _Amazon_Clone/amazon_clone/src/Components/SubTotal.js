@@ -16,10 +16,10 @@ function SubTotal() {
                         <p>
                             Subtotal ({shoppingCart.length}) : {shoppingCart.length === 1 ? "product" : "products"} <strong>{value}</strong>
                         </p>
-                        {getBasketTotal(shoppingCart) >= 1000 ?
+                        {getBasketTotal(shoppingCart) >= 1000 &&
                             <small className="subtotal__gift">
-                                <input checked type="checkbox" /> This order is with free shipping.
-                            </small> : null
+                                <input checked readOnly type="checkbox" /> This order is with free shipping.
+                            </small>
                         }
                     </>
                 )}

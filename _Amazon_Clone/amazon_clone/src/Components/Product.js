@@ -18,7 +18,6 @@ function Product({ id, title, price, imgURL, rating }) {
             }
         })
     };
-
     return (
         <div className="product">
             <div className="product__info">
@@ -32,8 +31,8 @@ function Product({ id, title, price, imgURL, rating }) {
                         Array(rating)
                             .fill()
                             .map(
-                                (_) => (
-                                    <span>&#9733;</span>
+                                (_, index) => (
+                                    <span key={index}>&#9733;</span>
                                 ))
                     }
                 </div>

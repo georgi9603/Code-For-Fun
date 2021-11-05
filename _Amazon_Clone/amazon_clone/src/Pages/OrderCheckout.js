@@ -26,16 +26,16 @@ function OrderCheckout() {
             : false
 
         if (validateShoopingCartIsNotEmpty() && validateIfRequiredFieldsAreNotEmpty()) {
-            const orderObject = {
-                customer: {
-                    firstName: firstName,
-                    lastName: lastName,
-                    phoneNumber: phoneNumber,
-                    address: address,
-                    secondAddress: secondAddress
-                },
-                products: shoppingCart
-            }
+            // const orderObject = {
+            //     customer: {
+            //         firstName: firstName,
+            //         lastName: lastName,
+            //         phoneNumber: phoneNumber,
+            //         address: address,
+            //         secondAddress: secondAddress
+            //     },
+            //     products: shoppingCart
+            // }
         } else {
             alert("Not all required fields are filled or shopping cart is empty!")
         }

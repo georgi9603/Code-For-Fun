@@ -44,7 +44,8 @@ function Home() {
                     <div className="home__row">
                         {firstRowProducts?.map(product => {
                             return <Product
-                                key={product.title}
+                                key={product.id}
+                                id={product.id}
                                 title={product.title}
                                 price={product.price}
                                 imgURL={product.imgURL}
@@ -55,7 +56,8 @@ function Home() {
                     <div className="home__row">
                         {secondRowProducts?.map(product => {
                             return <Product
-                                key={product.title}
+                                key={product.id}
+                                id={product.id}
                                 title={product.title}
                                 price={product.price}
                                 imgURL={product.imgURL}
@@ -65,7 +67,8 @@ function Home() {
                     </div>
                     <div className="home__row">
                         <Product
-                            key={thirdRowProducts?.title}
+                            key={thirdRowProducts?.id}
+                            id={thirdRowProducts?.id}
                             title={thirdRowProducts?.title}
                             price={thirdRowProducts?.price}
                             imgURL={thirdRowProducts?.imgURL}
