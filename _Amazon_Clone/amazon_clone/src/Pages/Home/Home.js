@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Product from '../Components/Product';
-import Loader from '../Components/Loader';
-import { initialState } from '../StateManager/initialState/initialState';
-import { useStateValue } from '../Components/StateProvider';
+import Product from '../../Components/Product';
+import Loader from '../../Components/Loader';
+import { initialState } from '../../StateManager/initialState/initialState';
+import { useStateValue } from '../../Components/StateProvider';
 
 import './Home.css';
 
