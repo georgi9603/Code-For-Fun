@@ -40,3 +40,9 @@
   @extend button;
   font-size: 22px;
 }
+
+@media only screen and (max-width: 600px) {
+  .product {
+    width: unset;
+  }
+}
