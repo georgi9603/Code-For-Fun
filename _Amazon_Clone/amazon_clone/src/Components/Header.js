@@ -2,14 +2,16 @@ import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link, useHistory } from 'react-router-dom';
-import { useStateValue } from "./StateProvider";
 import { auth } from '../firebase';
 import { actionTypes } from '../StateManager/actions/actionTypes';
 import './Header.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Header() {
     const history = useHistory();
-    const [{ shoppingCart, user }, dispatch] = useStateValue();
+    const dispatch = useDispatch();
+    const { shoppingCart, user } = useSelector(state => state.cart)
+
 
     const logout = () => {
         if (user) {
@@ -46,7 +48,7 @@ function Header() {
                             </span>
                             <span className="header__optionLineTwo">
                                 Sign Out
-                        </span>
+                            </span>
                         </div>
                     </Link>
                     :
@@ -54,7 +56,7 @@ function Header() {
                         <Link to={"/login"} className="header__link">
                             <span className="header__optionLineOne">
                                 Sign In
-                                </span>
+                            </span>
                         </Link>
                         <Link to="/register" className="header__link">
                             <span className="header__optionLineTwo">
@@ -66,7 +68,7 @@ function Header() {
                     <div className="header__option">
                         <span className="header__optionLineOne">
                             Returns
-                            </span>
+                        </span>
                         <span className="header__optionLineTwo">
                             & Orders
                         </span>
@@ -76,7 +78,7 @@ function Header() {
                     <div className="header__option">
                         <span className="header__optionLineOne">
                             Your
-                            </span>
+                        </span>
                         <span className="header__optionLineTwo">
                             Prime
                         </span>

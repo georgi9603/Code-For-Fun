@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Product from '../../Components/Product';
 import Loader from '../../Components/Loader';
-import { initialState } from '../../StateManager/initialState/initialState';
-import { useStateValue } from '../../Components/StateProvider';
-
+import { useSelector } from 'react-redux'
 import './Home.css';
 
 function Home() {
-    const [{ products }] = useStateValue(initialState.products);
+    const { products } = useSelector(state => state.products);
     const [firstRowProducts, setFirstRowProducts] = useState(undefined);
     const [secondRowProducts, setSecondRowProduct] = useState(undefined);
     const [thirdRowProducts, setThirdRowProducts] = useState(undefined);

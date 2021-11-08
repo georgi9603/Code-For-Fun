@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import reducer from './StateManager/reducers/reducer';
 import * as serviceWorker from './serviceWorker';
-import { StateProvider } from './Components/StateProvider';
-import { initialState } from './StateManager/initialState/initialState';
 import './index.css';
+import { store } from './StateManager/app/store';
+import { Provider } from 'react-redux'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
+    <Provider store={store}>
       <App />
-    </StateProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

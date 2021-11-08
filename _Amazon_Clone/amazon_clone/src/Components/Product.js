@@ -1,10 +1,10 @@
 import React from 'react';
-import { useStateValue } from './StateProvider';
 import { actionTypes } from '../StateManager/actions/actionTypes';
 import '../Styles/componentsStyles/product/product.scss';
+import { useDispatch } from 'react-redux';
 
 function Product({ id, title, price, imgURL, rating }) {
-    const [{ }, dispatch] = useStateValue();
+    const dispatch = useDispatch();
 
     const addToShoppingCart = () => {
         dispatch({

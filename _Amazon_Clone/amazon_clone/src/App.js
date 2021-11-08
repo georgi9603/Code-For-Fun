@@ -6,13 +6,14 @@ import Login from './Pages/Login';
 import Register from './Pages/Register.js';
 import OrderCheckout from './Pages/OrderCheckout';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useStateValue } from './Components/StateProvider';
 import { auth, database } from './firebase';
 import { actionTypes } from './StateManager/actions/actionTypes';
+import { useDispatch } from 'react-redux';
+import { getInitialProducts } from './StateManager/features/productsSlice';
 import './App.css';
 
 function App() {
-  const [{ }, dispatch] = useStateValue();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -38,10 +39,9 @@ function App() {
     const getData = () => {
       database
         .collection("products")
-        .onSnapshot(snapshot => dispatch({
-          type: actionTypes.INITIATE_PRODUCTS,
-          products: snapshot.docs.map(doc => doc.data())
-        }))
+        .onSnapshot(snapshot => dispatch(
+          getInitialProducts(snapshot.docs.map(doc => doc.data()))
+        ))
     }
 
     getData();
