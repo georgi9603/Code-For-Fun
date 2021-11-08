@@ -1,13 +1,11 @@
 import React from 'react';
-import SubTotal from '../Components/SubTotal';
-import CheckoutProduct from '../Components/CheckoutProduct';
-
+import SubTotal from '../../Components/SubTotal';
+import CheckoutProduct from '../../Components/CheckoutProduct/CheckoutProduct';
 import { useSelector } from 'react-redux'
 import './Checkout.css';
 
 function Checkout() {
     const { shoppingCart } = useSelector(state => state.cart)
-
 
     return (
         <div className="checkout">
@@ -26,7 +24,7 @@ function Checkout() {
                     <div>
                         <h2 className="checkout__title">Your shopping cart</h2>
                         {shoppingCart?.map(product => {
-                            return <CheckoutProduct key={product.id} id={product.id} title={product.title} imgURL={product.imgURL} price={product.price} rating={product.rating} />
+                            return <CheckoutProduct key={product.id} quantity={product.quantity} id={product.id} title={product.title} imgURL={product.imgURL} price={product.price} rating={product.rating} />
                         })}
                     </div>
                 )}

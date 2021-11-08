@@ -4,7 +4,6 @@ button,
   border-color: #a88734 #9c7e31 #846a29;
   border: 1px solid;
   border-radius: 5px;
-  margin-bottom: 5px;
   cursor: pointer;
 }
 
@@ -28,7 +27,10 @@ button:hover {
 }
 
 .checkoutProduct__info {
-  padding-left: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .checkoutProduct__title {
@@ -50,5 +52,23 @@ button:hover {
 
 .checkoutProduct__rating {
   margin-top: -10px;
+}
+
+.checkouProduct__quantity__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.checkouProduct__quantity__buttons {
+  width: 30px;
+}
+
+.checkouProduct__quantity__input {
+  width: 40px;
+}
+
+.checkouProduct__remove__product {
 }
 /*# sourceMappingURL=checkoutProduct.css.map */

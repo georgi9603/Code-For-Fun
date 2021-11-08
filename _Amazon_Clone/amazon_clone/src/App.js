@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from './Components/Header';
 import Home from './Pages/Home/Home';
-import Checkout from './Pages/Checkout';
+import Checkout from './Pages/Checkout/Checkout';
 import Login from './Pages/Login';
 import Register from './Pages/Register.js';
 import OrderCheckout from './Pages/OrderCheckout';

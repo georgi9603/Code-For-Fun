@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { removeProductFromCart } from '../StateManager/features/cartSlice';
-import '../Styles/componentsStyles/checkoutProduct/checkoutProduct.scss';
+import { addProductToCart, removeProductFromCart } from '../../StateManager/features/cartSlice';
+import './CheckoutProduct.css'
 
-function CheckoutProduct({ id, title, imgURL, price, rating }) {
+function CheckoutProduct({ id, title, imgURL, price, rating, quantity }) {
     const dispatch = useDispatch();
 
     const removeFromShoppingCart = () => {
@@ -33,7 +33,12 @@ function CheckoutProduct({ id, title, imgURL, price, rating }) {
                                 ))
                     }
                 </div>
-                <button onClick={removeFromShoppingCart}>Remove from shopping cart</button>
+                <div className="checkouProduct__quantity__wrapper">
+                    <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(addProductToCart({ id })) }}>-</button>
+                    <input className="checkouProduct__quantity__input" type="text" value={quantity} readOnly id="quantity" name="quantity" />
+                    <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(addProductToCart({ id })) }}>+</button>
+                </div>
+                <button className="checkouProduct__remove__product" onClick={removeFromShoppingCart}>Remove from shopping cart</button>
             </div>
         </div>
     )
