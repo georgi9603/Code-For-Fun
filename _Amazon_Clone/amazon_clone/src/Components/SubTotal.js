@@ -1,12 +1,12 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from './StateProvider';
 import { getBasketTotal } from '../StateManager/selectors/selectors';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 import '../Styles/componentsStyles/subTotal/subTotal.scss';
 
 function SubTotal() {
-    const [{ shoppingCart }] = useStateValue();
+    const { shoppingCart } = useSelector(state => state.cart);
 
     return (
         <div className="subtotal">

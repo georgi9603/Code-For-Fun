@@ -1,22 +1,19 @@
 import React from 'react';
-import { actionTypes } from '../StateManager/actions/actionTypes';
 import '../Styles/componentsStyles/product/product.scss';
 import { useDispatch } from 'react-redux';
+import { addProductToCart } from '../StateManager/features/cartSlice'
 
 function Product({ id, title, price, imgURL, rating }) {
     const dispatch = useDispatch();
 
     const addToShoppingCart = () => {
-        dispatch({
-            type: actionTypes.ADD_TO_CART,
-            product: {
-                id,
-                title,
-                price,
-                imgURL,
-                rating,
-            }
-        })
+        dispatch(addProductToCart({
+            id,
+            title,
+            price,
+            imgURL,
+            rating,
+        }))
     };
     return (
         <div className="product">

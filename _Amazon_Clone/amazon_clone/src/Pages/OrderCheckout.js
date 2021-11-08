@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useStateValue } from '../Components/StateProvider';
+import { useSelector } from 'react-redux'
 import './OrderCheckout.css'
 
 function OrderCheckout() {
@@ -10,7 +10,7 @@ function OrderCheckout() {
     const [address, setAddress] = useState("");
     const [secondAddress, setSecondAddress] = useState("");
 
-    const [{ shoppingCart }] = useStateValue();
+    const { shoppingCart } = useSelector(state => state.cart);
 
     const handleSubmitForm = (e) => {
         e.preventDefault()

@@ -1,16 +1,13 @@
 import React from 'react'
-import { useStateValue } from './StateProvider'
-import { actionTypes } from '../StateManager/actions/actionTypes';
+import { useDispatch } from 'react-redux';
+import { removeProductFromCart } from '../StateManager/features/cartSlice';
 import '../Styles/componentsStyles/checkoutProduct/checkoutProduct.scss';
 
 function CheckoutProduct({ id, title, imgURL, price, rating }) {
-    const [{ }, dispatch] = useStateValue();
+    const dispatch = useDispatch();
 
     const removeFromShoppingCart = () => {
-        dispatch({
-            type: actionTypes.REMOVE_FROM_CART,
-            id: id
-        })
+        dispatch(removeProductFromCart(id));
     }
 
     return (

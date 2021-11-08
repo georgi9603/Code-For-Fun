@@ -1,11 +1,13 @@
 import React from 'react';
 import SubTotal from '../Components/SubTotal';
-import { useStateValue } from '../Components/StateProvider';
 import CheckoutProduct from '../Components/CheckoutProduct';
+
+import { useSelector } from 'react-redux'
 import './Checkout.css';
 
 function Checkout() {
-    const [{ shoppingCart }] = useStateValue();
+    const { shoppingCart } = useSelector(state => state.cart)
+
 
     return (
         <div className="checkout">
