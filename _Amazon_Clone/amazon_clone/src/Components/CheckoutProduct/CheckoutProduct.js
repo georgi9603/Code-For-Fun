@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { addProductToCart, removeProductFromCart } from '../../StateManager/features/cartSlice';
+import { increaseQuantity, decreaseQuantity, removeProductFromCart } from '../../StateManager/features/cartSlice';
 import './CheckoutProduct.css'
 
 function CheckoutProduct({ id, title, imgURL, price, rating, quantity }) {
@@ -34,9 +34,9 @@ function CheckoutProduct({ id, title, imgURL, price, rating, quantity }) {
                     }
                 </div>
                 <div className="checkouProduct__quantity__wrapper">
-                    <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(addProductToCart({ id })) }}>-</button>
+                    <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(decreaseQuantity({ id })) }}>-</button>
                     <input className="checkouProduct__quantity__input" type="text" value={quantity} readOnly id="quantity" name="quantity" />
-                    <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(addProductToCart({ id })) }}>+</button>
+                    <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(increaseQuantity({ id })) }}>+</button>
                 </div>
                 <button className="checkouProduct__remove__product" onClick={removeFromShoppingCart}>Remove from shopping cart</button>
             </div>
