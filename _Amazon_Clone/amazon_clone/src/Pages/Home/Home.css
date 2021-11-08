@@ -11,6 +11,10 @@
   margin-right: 5px;
 }
 
+.home__products {
+  margin-top: -20%;
+}
+
 .home__image {
   max-width: 2300px;
   width: 100%;
@@ -23,5 +27,10 @@
   .home__row {
     display: flex;
     flex-direction: column;
+  }
+
+  .home__products {
+    margin-top: unset;
+    padding-top: 30%;
   }
 }

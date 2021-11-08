@@ -40,40 +40,41 @@ function Home() {
                         src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Beauty_v2_en_US_1x._CB429089975_.jpg"
                         alt=""
                     />
-
-                    <div className="home__row">
-                        {firstRowProducts?.map(product => {
-                            return <Product
-                                key={product.id}
-                                id={product.id}
-                                title={product.title}
-                                price={product.price}
-                                imgURL={product.imgURL}
-                                rating={product.rating}
+                    <div className="home__products">
+                        <div className="home__row">
+                            {firstRowProducts?.map(product => {
+                                return <Product
+                                    key={product.id}
+                                    id={product.id}
+                                    title={product.title}
+                                    price={product.price}
+                                    imgURL={product.imgURL}
+                                    rating={product.rating}
+                                />
+                            })}
+                        </div>
+                        <div className="home__row">
+                            {secondRowProducts?.map(product => {
+                                return <Product
+                                    key={product.id}
+                                    id={product.id}
+                                    title={product.title}
+                                    price={product.price}
+                                    imgURL={product.imgURL}
+                                    rating={product.rating}
+                                />
+                            })}
+                        </div>
+                        <div className="home__row">
+                            <Product
+                                key={thirdRowProducts?.id}
+                                id={thirdRowProducts?.id}
+                                title={thirdRowProducts?.title}
+                                price={thirdRowProducts?.price}
+                                imgURL={thirdRowProducts?.imgURL}
+                                rating={thirdRowProducts?.rating}
                             />
-                        })}
-                    </div>
-                    <div className="home__row">
-                        {secondRowProducts?.map(product => {
-                            return <Product
-                                key={product.id}
-                                id={product.id}
-                                title={product.title}
-                                price={product.price}
-                                imgURL={product.imgURL}
-                                rating={product.rating}
-                            />
-                        })}
-                    </div>
-                    <div className="home__row">
-                        <Product
-                            key={thirdRowProducts?.id}
-                            id={thirdRowProducts?.id}
-                            title={thirdRowProducts?.title}
-                            price={thirdRowProducts?.price}
-                            imgURL={thirdRowProducts?.imgURL}
-                            rating={thirdRowProducts?.rating}
-                        />
+                        </div>
                     </div>
                 </div>
                 : <Loader />
