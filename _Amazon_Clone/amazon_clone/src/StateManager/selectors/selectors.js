@@ -1,2 +1,2 @@
 export const getBasketTotal = shoppingCart =>
-    shoppingCart?.reduce((amount, product) => product.price + amount, 0);
+    shoppingCart?.reduce((amount, product) => product.price * product.quantity + amount, 0);

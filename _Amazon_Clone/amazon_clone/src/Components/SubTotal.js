@@ -30,9 +30,12 @@ function SubTotal() {
                 thousandSeparator={true}
                 prefix={"$"}
             />
-            <Link to="/ordercheckout">
+            {shoppingCart.length > 0 ? <Link to="/ordercheckout">
                 <button>Proceed to Checkout</button>
+            </Link> : <Link to="/">
+                <button>Go back shopping</button>
             </Link>
+            }
         </div>
     )
 }
