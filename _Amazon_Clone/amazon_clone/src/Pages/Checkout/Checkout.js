@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import './Checkout.css';
 
 function Checkout() {
-    const { shoppingCart } = useSelector(state => state.cart)
+    const { shoppingCart } = useSelector(state => state.shoppingCart)
 
     return (
         <div className="checkout">

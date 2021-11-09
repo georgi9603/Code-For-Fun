@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import '../Styles/componentsStyles/subTotal/subTotal.scss';
 
 function SubTotal() {
-    const { shoppingCart } = useSelector(state => state.cart);
+    const { shoppingCart } = useSelector(state => state.shoppingCart);
 
     return (
         <div className="subtotal">

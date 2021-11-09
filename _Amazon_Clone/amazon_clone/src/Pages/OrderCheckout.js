@@ -10,7 +10,7 @@ function OrderCheckout() {
     const [address, setAddress] = useState("");
     const [secondAddress, setSecondAddress] = useState("");
 
-    const { shoppingCart } = useSelector(state => state.cart);
+    const { shoppingCart } = useSelector(state => state.shoppingCart);
 
     const handleSubmitForm = (e) => {
         e.preventDefault()

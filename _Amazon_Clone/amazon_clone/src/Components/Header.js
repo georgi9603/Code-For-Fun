@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Header() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const { shoppingCart, user } = useSelector(state => state.cart)
+    const { shoppingCart, user } = useSelector(state => state.shoppingCart)
 
 
     const logout = () => {
