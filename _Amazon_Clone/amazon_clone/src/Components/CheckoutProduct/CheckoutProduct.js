@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { increaseQuantity, decreaseQuantity, removeProductFromCart } from '../../StateManager/features/cartSlice';
+import { increaseQuantity, decreaseQuantity, setQuantity, removeProductFromCart } from '../../StateManager/features/cartSlice';
 import './CheckoutProduct.css'
 
 function CheckoutProduct({ id, title, imgURL, price, rating, quantity }) {
@@ -8,6 +8,14 @@ function CheckoutProduct({ id, title, imgURL, price, rating, quantity }) {
 
     const removeFromShoppingCart = () => {
         dispatch(removeProductFromCart(id));
+    }
+
+    const onChangeInput = (value) => {
+        if (isNaN(value)) {
+            return
+        }
+
+        dispatch(setQuantity({ id, quantity: Number(value) }))
     }
 
     return (
@@ -35,7 +43,7 @@ function CheckoutProduct({ id, title, imgURL, price, rating, quantity }) {
                 </div>
                 <div className="checkouProduct__quantity__wrapper">
                     <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(decreaseQuantity({ id })) }}>-</button>
-                    <input className="checkouProduct__quantity__input" type="text" value={quantity} readOnly id="quantity" name="quantity" />
+                    <input className="checkouProduct__quantity__input" type="text" value={quantity} onChange={e => onChangeInput(e.target.value)} id="quantity" name="quantity" />
                     <button className="checkouProduct__quantity__buttons" onClick={() => { dispatch(increaseQuantity({ id })) }}>+</button>
                 </div>
                 <button className="checkouProduct__remove__product" onClick={removeFromShoppingCart}>Remove from shopping cart</button>
