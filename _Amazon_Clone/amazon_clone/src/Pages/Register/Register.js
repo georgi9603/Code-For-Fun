@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 import './Register.css';
 
 function Register() {
