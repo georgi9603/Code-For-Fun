@@ -1,5 +1,5 @@
 import React from 'react';
-import SubTotal from '../../Components/SubTotal';
+import SubTotal from '../../Components/SubTotal/SubTotal';
 import CheckoutProduct from '../../Components/CheckoutProduct/CheckoutProduct';
 import { useSelector } from 'react-redux'
 import './Checkout.css';

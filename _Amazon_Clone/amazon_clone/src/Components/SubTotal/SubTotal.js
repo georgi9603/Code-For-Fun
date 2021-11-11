@@ -1,9 +1,9 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
-import { getBasketTotal } from '../StateManager/selectors/selectors';
+import { getBasketTotal } from '../../StateManager/selectors/selectors';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import '../Styles/componentsStyles/subTotal/subTotal.scss';
+import './subTotal.css';
 
 function SubTotal() {
     const { shoppingCart } = useSelector(state => state.shoppingCart);

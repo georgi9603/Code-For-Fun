@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Product from '../../Components/Product';
-import Loader from '../../Components/Loader';
+import Product from '../../Components/Product/Product';
+import Loader from '../../Components/Loader/Loader';
 import { useSelector } from 'react-redux'
 import './Home.css';
 

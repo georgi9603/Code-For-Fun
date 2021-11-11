@@ -2,8 +2,8 @@ import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link, useHistory } from 'react-router-dom';
-import { auth } from '../firebase';
-import { actionTypes } from '../StateManager/actions/actionTypes';
+import { auth } from '../../firebase';
+import { actionTypes } from '../../StateManager/actions/actionTypes';
 import './Header.css';
 import { useDispatch, useSelector } from 'react-redux';
 
