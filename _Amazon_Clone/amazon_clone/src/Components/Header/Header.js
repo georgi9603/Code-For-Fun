@@ -52,35 +52,29 @@ function Header() {
                         </div>
                     </Link>
                     :
-                    <div className="header__option">
-                        <Link to={"/login"} className="header__link">
-                            <span className="header__optionLineOne">
+                    <Link to="/Login" className="header__link">
+                        <div className="header__option">
+                            <span className="header__optionLineTwo">
                                 Sign In
                             </span>
-                        </Link>
-                        <Link to="/register" className="header__link">
-                            <span className="header__optionLineTwo">
-                                Sign up
-                            </span>
-                        </Link>
-                    </div>}
-                <Link to="/Login" className="header__link">
+                        </div>
+                    </Link>
+                }
+                <Link to="/register" className="header__link">
                     <div className="header__option">
-                        <span className="header__optionLineOne">
-                            Returns
-                        </span>
                         <span className="header__optionLineTwo">
-                            & Orders
+                            Sign up
                         </span>
                     </div>
+
                 </Link>
-                <Link to="/Login" className="header__link">
+                <Link to="/Checkout" className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">
                             Your
                         </span>
                         <span className="header__optionLineTwo">
-                            Prime
+                            Cart
                         </span>
                     </div>
                 </Link>

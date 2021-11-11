@@ -58,7 +58,7 @@ function Register() {
                     Please see our Privacy Notice, our Cokkies Notice and our interest-Based Ads Notice.
                 </p>
                 <Link to="/login" className="register__loginLink">
-                    <button>Go back to login</button>
+                    <button>Go to login</button>
                 </Link>
             </div>
         </div>
