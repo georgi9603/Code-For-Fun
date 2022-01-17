@@ -1,0 +1,216 @@
+{
+  "choiceQuestions": [
+    {
+      "id": 1,
+      "questionText": "Is programming fun?",
+      "options": [
+        { "value": 1, "label": "No" },
+        { "value": 2, "label": "Yes, if you are good one" },
+        { "value": 3, "label": "Bunny" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 2
+    },
+    {
+      "id": 2,
+      "questionText": "What is the answer of this question?",
+      "options": [
+        { "value": 1, "label": "1" },
+        { "value": 2, "label": "2" },
+        { "value": 3, "label": "42" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 3
+    },
+    {
+      "id": 3,
+      "questionText": "What is the name of the developer you are going to hire?",
+      "options": [
+        { "value": 1, "label": "Georgi" },
+        { "value": 2, "label": "Jeff" },
+        { "value": 3, "label": "Joe" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "questionText": "What is Jeff Bezzos real first name?",
+      "options": [
+        { "value": 1, "label": "Johnny" },
+        { "value": 2, "label": "Jeffrey" },
+        { "value": 3, "label": "Preston" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "questionText": "Am I wasting time writing these question?",
+      "options": [
+        { "value": 1, "label": "No" },
+        { "value": 2, "label": "Maybe" },
+        { "value": 3, "label": "Definitely!" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 3
+    },
+    {
+      "id": 6,
+      "questionText": "When is Bulgaria established?",
+      "options": [
+        { "value": 1, "label": "681" },
+        { "value": 2, "label": "1024" },
+        { "value": 3, "label": "0" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "questionText": "What is the answer to everything?",
+      "options": [
+        { "value": 1, "label": "42" },
+        { "value": 2, "label": "Yes!" },
+        { "value": 3, "label": "Dogs" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "questionText": "How much ears bunnies have?",
+      "options": [
+        { "value": 1, "label": "2" },
+        { "value": 2, "label": "1" },
+        { "value": 3, "label": "4" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "questionText": "How many states does America have?",
+      "options": [
+        { "value": 1, "label": "1" },
+        { "value": 2, "label": "50" },
+        { "value": 3, "label": "33" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "questionText": "This is last question. How many questions does this quiz have?",
+      "options": [
+        { "value": 1, "label": "8" },
+        { "value": 2, "label": "10" },
+        { "value": 3, "label": "12" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 2
+    }
+  ],
+  "yesOrNoQuestions": [
+    {
+      "id": 1,
+      "questionText": "Should you hire me for you project?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "questionText": "Is 42 answer to everything?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "questionText": "Is programming interesting?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "questionText": "Is the world round?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "questionText": "Is this Quiz hard?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "questionText": "Is this question number 6?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "questionText": "Should you hire someone elase?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "questionText": "Are bunnies adorable?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "questionText": "Is this qustion number 9?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "questionText": "Are question 6 and 9 combined equal to 69?",
+      "options": [
+        { "value": 1, "label": "Yes" },
+        { "value": 2, "label": "No" }
+      ],
+      "selectedValue": null,
+      "correctAnswer": 1
+    }
+  ]
+}
